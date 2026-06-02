@@ -43,7 +43,7 @@ function GalleryPage() {
 
   return (
     <>
-      <PageHero eyebrow="Trophy Catches & Big Smiles" title="See the Action. Feel the Excitement." subtitle="Fishing stories worth a thousand pictures." image={PHOTOS.family1} />
+      <PageHero eyebrow="Trophy Catches & Big Smiles" title="See the Action. Feel the Excitement." subtitle="Fishing stories worth a thousand pictures." image={PHOTOS.galleryHero} />
       <section className="py-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
