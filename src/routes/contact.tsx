@@ -20,7 +20,7 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Let's get you on the water" title="Have Questions or Ready to Book?" subtitle="Call, email, or message us today to book your fishing charter or ask any questions." image={PHOTOS.privateCharters} />
+      <PageHero eyebrow="Let's get you on the water" title="Have Questions or Ready to Book?" subtitle="Call, email, or message us today to book your fishing charter or ask any questions." image={PHOTOS.contactHero} />
       <section className="py-20 bg-background">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div>
