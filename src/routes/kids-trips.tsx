@@ -20,43 +20,89 @@ export const Route = createFileRoute("/kids-trips")({
 function KidsPage() {
   return (
     <>
-      <PageHero eyebrow="The perfect fishing trip for kids" title="🎣 Big Smiles & First Catches 🐟" subtitle="Spots fill fast - book your kids' fishing trip now." image={PHOTOS.kids} />
+      <PageHero eyebrow="The perfect trip for young anglers" title="Big Smiles & First Catches 🎣" subtitle="A 3-hour catch-and-release trip built for kids and first-timers. Spots fill fast - book today." image={PHOTOS.kidsHero} />
 
-      <section className="py-16 bg-background">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-5 text-muted-foreground text-lg leading-relaxed">
-          <p>👦👧 <strong className="text-foreground">The perfect fishing trip for young anglers.</strong> Designed for kids and first-timers, our shorter trips keep the excitement high and the boredom low.</p>
-          <p>🎣 <strong className="text-foreground">Hands-on fishing fun.</strong> Our patient, friendly crew loves teaching kids the basics of fishing in a safe, stress-free environment.</p>
-          <p>💰 <strong className="text-foreground">Family-friendly pricing.</strong> Special discounted rates for kids so the whole family can enjoy a fun day on the water.</p>
-          <p>🚤 <strong className="text-foreground">Short and sweet adventure.</strong> Just the right trip length to hook some fish, create lasting memories, and inspire a love for fishing.</p>
-          <p>🐟 <strong className="text-foreground">Make their first catch a moment to remember.</strong> Book your kids' fishing trip today and give them an unforgettable day on the water.</p>
-          <div className="pt-4"><BookButton>Book the Kids Trip</BookButton></div>
+      <section className="py-20 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Built For Beginners</p>
+            <h2 className="mt-3 font-display text-4xl uppercase text-primary">A First Catch They'll Never Forget</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Designed for kids and first-timers, our shorter trip keeps the excitement high and the boredom low. Our patient, friendly crew handles the gear so the kids can focus on the fun part - reeling in fish.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Catch-and-release fishing in calm water, with hands-on coaching every step of the way. Discounted family-friendly pricing means the whole crew gets to come along.
+            </p>
+            <div className="mt-8"><BookButton>Book the Kids Trip</BookButton></div>
+          </div>
+          <img src={PHOTOS.kids} alt="Kids fishing with Catch 22" className="aspect-[4/5] object-cover rounded-sm shadow-[var(--shadow-deep)]" />
         </div>
       </section>
 
-      <section className="py-16 bg-sand">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8">
+      <section className="py-20 bg-sand">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">What To Expect</p>
+            <h2 className="mt-3 font-display text-4xl sm:text-5xl uppercase text-primary">Short, Sweet & Action-Packed</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Three hours on the water - just the right length to hook some fish, create lasting memories, and inspire a love for fishing.
+            </p>
+          </div>
+          <div className="mt-12 grid md:grid-cols-3 gap-6">
+            <div className="bg-card rounded-sm border border-border p-8">
+              <p className="font-display text-sm uppercase tracking-[0.2em] text-accent">Duration</p>
+              <h3 className="mt-2 font-display text-2xl uppercase text-primary">3 Hours</h3>
+              <p className="mt-3 text-muted-foreground">A perfectly paced morning or afternoon trip, designed around shorter attention spans.</p>
+            </div>
+            <div className="bg-card rounded-sm border border-border p-8">
+              <p className="font-display text-sm uppercase tracking-[0.2em] text-accent">Boat</p>
+              <h3 className="mt-2 font-display text-2xl uppercase text-primary">Sea Fox 248</h3>
+              <p className="mt-3 text-muted-foreground">Stable, spacious, and family-friendly. Up to 6 guests aboard with our kid-friendly crew.</p>
+            </div>
+            <div className="bg-card rounded-sm border border-border p-8">
+              <p className="font-display text-sm uppercase tracking-[0.2em] text-accent">Approach</p>
+              <h3 className="mt-2 font-display text-2xl uppercase text-primary">Catch & Release</h3>
+              <p className="mt-3 text-muted-foreground">Hands-on coaching, easy-to-catch species, and a safe, stress-free environment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="font-display text-2xl uppercase text-primary">What To Bring</h2>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
-              <li>• Sunscreen (lotion only - no spray)</li>
-              <li>• Hat, UV protective clothing</li>
-              <li>• Deck shoes or non-marking flip-flops</li>
-              <li>• Snacks, drinks, lots of water</li>
-              <li>• Fitted life vest for children under 7</li>
-              <li>• Camera - tag us @Catch22Charters!</li>
+            <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Packing List</p>
+            <h2 className="mt-3 font-display text-3xl uppercase text-primary">What To Bring</h2>
+            <ul className="mt-6 space-y-3 text-muted-foreground">
+              <li className="flex gap-3"><span className="text-accent">—</span> Sunscreen (lotion only, no spray)</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Hat and UV protective clothing</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Deck shoes or non-marking flip-flops</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Snacks, drinks, and lots of water</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Fitted life vest for children under 7</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Camera - tag us @Catch22Charters</li>
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-2xl uppercase text-primary">What's Included</h2>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
-              <li>• All rods, reels, tackle, and bait</li>
-              <li>• Florida fishing license</li>
-              <li>• On-board cooler and ice</li>
-              <li>• Patient, kid-friendly crew</li>
-              <li>• Catch-and-release coaching</li>
-              <li>• Free parking and restrooms</li>
+            <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">On The House</p>
+            <h2 className="mt-3 font-display text-3xl uppercase text-primary">What's Included</h2>
+            <ul className="mt-6 space-y-3 text-muted-foreground">
+              <li className="flex gap-3"><span className="text-accent">—</span> All rods, reels, tackle, and bait</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Florida fishing license for everyone aboard</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> On-board cooler and ice</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Patient, kid-friendly crew</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Catch-and-release coaching</li>
+              <li className="flex gap-3"><span className="text-accent">—</span> Free parking and restrooms at the dock</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-sand">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Ready When You Are</p>
+          <h2 className="mt-3 font-display text-4xl sm:text-5xl uppercase text-primary">Make Their First Catch Count</h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">Spots fill fast in season. Book today and give your kids a day on the water they'll be talking about for years.</p>
+          <div className="mt-8 flex justify-center"><BookButton>Book the Kids Trip</BookButton></div>
         </div>
       </section>
     </>
