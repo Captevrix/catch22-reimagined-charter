@@ -30,6 +30,13 @@ function PrivacyPage() {
         <h2 className="font-display text-xl uppercase text-primary mt-8">How We Use Your Information</h2>
         <p className="text-muted-foreground mt-2">We use your information to fulfill bookings, communicate with you, and improve our service. We do not sell your personal information to third parties.</p>
 
+        <h2 className="font-display text-xl uppercase text-primary mt-8">SMS Consent &amp; Mobile Information Sharing</h2>
+        <p className="text-muted-foreground mt-2">Consent to receive SMS messages from {SITE.name} is collected separately and is never required to submit a form, book a trip, or use our services. You may opt in to marketing messages (special offers, discounts, and service updates) and/or non-marketing messages (booking confirmations, trip reminders, weather updates, and operational notifications) independently. Consent checkboxes are never pre-selected.</p>
+        <p className="text-muted-foreground mt-2 italic">No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Information sharing with subcontractors in support services, such as customer service, is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
+
+        <h2 className="font-display text-xl uppercase text-primary mt-8">No Sale of Information</h2>
+        <p className="text-muted-foreground mt-2">{SITE.name} does not sell, rent, or buy leads. We are not affiliated with lead-generation networks. Your information is collected directly by us, for use by us, in connection with your charter.</p>
+
         <h2 className="font-display text-xl uppercase text-primary mt-8">Contact</h2>
         <p className="text-muted-foreground mt-2">Questions about this policy? Call {SITE.phone} or email <a href={`mailto:${SITE.email}`} className="text-accent">{SITE.email}</a>.</p>
       </div>
