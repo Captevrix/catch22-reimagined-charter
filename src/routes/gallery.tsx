@@ -33,6 +33,14 @@ function GalleryPage() {
     };
   }, []);
 
+  useEffect(() => {
+    if (document.querySelector('script[src="https://static.elfsight.com/platform/platform.js"]')) return;
+    const s = document.createElement("script");
+    s.src = "https://static.elfsight.com/platform/platform.js";
+    s.async = true;
+    document.body.appendChild(s);
+  }, []);
+
   return (
     <>
       <PageHero eyebrow="Trophy Catches & Big Smiles" title="See the Action. Feel the Excitement." subtitle="Fishing stories worth a thousand pictures." image={PHOTOS.family1} />
@@ -66,7 +74,6 @@ function GalleryPage() {
               className="elfsight-app-01d3fec7-fb61-49d9-9089-5918166fe2f9"
               data-elfsight-app-lazy
             />
-            <script src="https://static.elfsight.com/platform/platform.js" async />
           </div>
           <div className="text-center mb-8">
             <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Photo Highlights</p>
