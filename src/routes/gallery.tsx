@@ -57,6 +57,20 @@ function GalleryPage() {
               </section>
             </blockquote>
           </div>
+          <div className="text-center mb-12">
+            <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Catch 22 on Instagram</p>
+            <a href={SITE.social.instagram} target="_blank" rel="noreferrer" className="mt-2 inline-block font-display text-2xl uppercase text-primary hover:text-accent transition">@catch22charters_</a>
+          </div>
+          <div className="mb-16 flex justify-center">
+            <iframe
+              src="https://www.instagram.com/catch22charters_/embed/"
+              className="border-0 overflow-hidden"
+              style={{ maxWidth: 540, width: "100%", height: 620 }}
+              scrolling="no"
+              allowTransparency={true}
+              title="Catch 22 Charters Instagram"
+            />
+          </div>
           <div className="text-center mb-8">
             <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Photo Highlights</p>
           </div>
