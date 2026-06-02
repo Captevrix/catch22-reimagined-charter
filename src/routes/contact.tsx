@@ -22,10 +22,10 @@ function ContactPage() {
     <>
       <PageHero eyebrow="Let's get you on the water" title="Have Questions or Ready to Book?" subtitle="Call, email, or message us today to book your fishing charter or ask any questions." image={PHOTOS.privateCharters} />
       <section className="py-20 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div>
             <h2 className="font-display text-3xl uppercase text-primary">Get In Touch</h2>
-            <p className="mt-4 text-muted-foreground">Fill out the form and we'll get back to you fast. Prefer to talk? Call us directly.</p>
+            <p className="mt-4 text-muted-foreground">Ready to book or have a question? Call or email us directly — we reply fast.</p>
             <ul className="mt-8 space-y-5">
               <Item Icon={Phone} label="Phone" value={SITE.phone} href={SITE.phoneHref} />
               <Item Icon={Mail} label="Email" value={SITE.email} href={`mailto:${SITE.email}`} />
@@ -39,9 +39,6 @@ function ContactPage() {
                 loading="lazy"
               />
             </div>
-          </div>
-          <div className="bg-card border border-border rounded-sm p-6 lg:p-8 h-fit">
-            <ContactForm />
           </div>
         </div>
       </section>
