@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { BookingProvider } from "@/components/BookingModal";
+import { RedSnapperCallout } from "@/components/RedSnapperCallout";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
@@ -147,6 +148,7 @@ function RootComponent() {
           <main className="flex-1"><Outlet /></main>
           <SiteFooter />
           <MobileStickyCTA />
+          <RedSnapperCallout />
         </div>
       </BookingProvider>
     </QueryClientProvider>
