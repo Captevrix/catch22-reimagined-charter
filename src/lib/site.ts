@@ -38,6 +38,8 @@ export const PHOTOS = {
   testimonial2: img("67b0f342237ce2ab10fa477a"),
   testimonial3: img("67b0f34e11feb9a6bdd12529"),
   avatar: img("6cc930c9-2eeb-414e-8f5f-b1c8dd599341"),
+  aboutHero: img("67b0b3e1237ce21654fa019d"),
+  galleryHero: img("67b0b3e12ba94e5eeea39945"),
 };
 
 export const SPONSORS = [

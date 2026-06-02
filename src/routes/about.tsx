@@ -21,7 +21,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About Catch 22" title="Don't Just Dream It - Fish It." subtitle="Spots fill fast - book your fishing charter now. Choose your adventure." image={PHOTOS.family1} />
+      <PageHero eyebrow="About Catch 22" title="Don't Just Dream It - Fish It." subtitle="Spots fill fast - book your fishing charter now. Choose your adventure." image={PHOTOS.aboutHero} />
 
       <section className="py-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
