@@ -8,10 +8,11 @@ export type Boat = {
   embedUrl: string;
 };
 
-// NOTE: Only one Vrixplay embed URL was provided. Both boats currently route
-// through the same booking flow — swap in the Grady-specific embed when available.
-const VRIXPLAY_DEFAULT =
+const VRIXPLAY_SEAFOX =
   "https://app.vrixplay.com/book/9bc43e8f-4e23-49c2-bd46-ec504e2f7e78/8de956ba-5406-4e8b-bf69-61ce7012f0d8?embed=true";
+
+const VRIXPLAY_GRADY =
+  "https://app.vrixplay.com/book/9bc43e8f-4e23-49c2-bd46-ec504e2f7e78/0d019bc7-20b4-43c2-8d2b-04e57043f7b2?embed=true";
 
 export const BOATS: Record<BoatId, Boat> = {
   seafox: {
@@ -19,14 +20,14 @@ export const BOATS: Record<BoatId, Boat> = {
     name: "Sea Fox 248 Commander",
     tagline: "Inshore + State Waters — up to 6 anglers",
     badge: "State Waters",
-    embedUrl: VRIXPLAY_DEFAULT,
+    embedUrl: VRIXPLAY_SEAFOX,
   },
   grady: {
     id: "grady",
     name: "Grady-White Offshore",
     tagline: "Federally Permitted — long-range offshore",
     badge: "Federal Permit",
-    embedUrl: VRIXPLAY_DEFAULT,
+    embedUrl: VRIXPLAY_GRADY,
   },
 };
 
