@@ -29,7 +29,7 @@ export const submitContact = createServerFn({ method: "POST" })
           email: data.email,
           phone: data.phone,
           message: data.message,
-          source: "catch22fishingcharters.com — contact form",
+          source: "catch22fishingcharters.com - contact form",
           submitted_at: new Date().toISOString(),
         }),
       });

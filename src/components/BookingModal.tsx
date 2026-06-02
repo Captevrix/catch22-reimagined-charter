@@ -94,7 +94,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
               </DialogTitle>
               <DialogDescription className="text-primary-foreground/80">
                 {active
-                  ? "Pick a date and trip — confirmation arrives instantly."
+                  ? "Pick a date and trip - confirmation arrives instantly."
                   : "Two boats, two experiences. Select one to see live availability."}
               </DialogDescription>
             </DialogHeader>

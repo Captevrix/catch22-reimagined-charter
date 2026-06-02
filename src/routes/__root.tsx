@@ -23,7 +23,7 @@ const localBusinessSchema = {
   "@type": ["LocalBusiness", "TouristAttraction"],
   "@id": `${SITE_URL}/#business`,
   name: SITE.name,
-  description: "Private fishing charters out of Two Georges Marina in Shalimar, FL — running the world-famous waters of Destin in the World's Luckiest Fishing Village.",
+  description: "Private fishing charters out of Two Georges Marina in Shalimar, FL - running the world-famous waters of Destin in the World's Luckiest Fishing Village.",
   url: SITE_URL,
   telephone: "+1-850-660-3753",
   image: SITE.logo,

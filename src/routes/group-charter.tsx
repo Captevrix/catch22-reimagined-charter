@@ -7,8 +7,8 @@ import { SITE_URL } from "@/lib/seo";
 export const Route = createFileRoute("/group-charter")({
   head: () => ({
     meta: [
-      { title: "Shared Fishing Charter | Catch 22 — Destin, FL" },
-      { name: "description", content: "No group? No problem. Join other anglers on a shared charter in Destin, FL — affordable fishing fun at a fraction of the cost of a private trip." },
+      { title: "Shared Fishing Charter | Catch 22 - Destin, FL" },
+      { name: "description", content: "No group? No problem. Join other anglers on a shared charter in Destin, FL - affordable fishing fun at a fraction of the cost of a private trip." },
       { property: "og:title", content: "Shared Fishing Charter | Catch 22" },
       { property: "og:url", content: SITE_URL + "/group-charter" },
     ],
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/group-charter")({
 function GroupPage() {
   return (
     <>
-      <PageHero eyebrow="No group? No problem." title="Affordable Fishing Fun — Join a Group" subtitle="Share the boat (and the cost) with other anglers. A great fit for couples, solo anglers, and families on a budget." image={PHOTOS.family2} />
+      <PageHero eyebrow="No group? No problem." title="Affordable Fishing Fun - Join a Group" subtitle="Share the boat (and the cost) with other anglers. A great fit for couples, solo anglers, and families on a budget." image={PHOTOS.family2} />
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-5 text-muted-foreground text-lg leading-relaxed">
