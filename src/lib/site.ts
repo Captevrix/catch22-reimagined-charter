@@ -1,5 +1,11 @@
-const CDN = "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1600/u_https://assets.cdn.filesafe.space/jSMwtj2fAo3doztQ8dgc/media";
-const GCS = "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1600/u_https://storage.googleapis.com/msgsndr/jSMwtj2fAo3doztQ8dgc/media";
+import { ASSETS } from "@/assets/source";
+
+// All images are self-hosted on our CDN (no hotlinking to the source site).
+const img = (id: string) => {
+  const url = ASSETS[id];
+  if (!url) throw new Error(`Missing local asset for id ${id}`);
+  return url;
+};
 
 export const SITE = {
   name: "Catch 22 Fishing Charters",
@@ -11,7 +17,7 @@ export const SITE = {
   marina: "Two Georges Marina",
   address: "100 Old Ferry Rd, Shalimar, FL 32579",
   heroVideo: "https://storage.googleapis.com/msgsndr/jSMwtj2fAo3doztQ8dgc/media/67b0f5622aa0e9642fecbcdf.mp4",
-  logo: `${CDN}/67b0dd0e11feb9c0f8d107c3.png`,
+  logo: img("67b0dd0e11feb9c0f8d107c3"),
   social: {
     facebook: "https://www.facebook.com/p/Catch-22-Charters-100083439394689/",
     instagram: "https://www.instagram.com/catch22charters_",
@@ -20,36 +26,48 @@ export const SITE = {
 };
 
 export const PHOTOS = {
-  privateCharters: `${CDN}/67b0ebf211feb91200d1194a.png`,
-  trolling: `${CDN}/67b0ec05237ce259f4fa3a43.png`,
-  kids: `${CDN}/67b0ec2e237ce2da57fa3a6f.png`,
-  family1: `${CDN}/67b0b3e12aa0e9731eec72cc.jpeg`,
-  family2: `${CDN}/67b0b3e12ba94e3290a39940.jpeg`,
-  family3: `${CDN}/67b0b3e111feb93255d0dca4.jpeg`,
-  seaFoxIcon: `${GCS}/6977fc5cc1fa0cd3bfe12d45.png`,
-  gradyIcon: `${GCS}/6977fe2ba87beb662222d6c0.png`,
-  testimonial1: `${CDN}/67b0f32711feb9e510d12501.png`,
-  testimonial2: `${CDN}/67b0f342237ce2ab10fa477a.png`,
-  testimonial3: `${CDN}/67b0f34e11feb9a6bdd12529.png`,
-  avatar: `${CDN}/6cc930c9-2eeb-414e-8f5f-b1c8dd599341.png`,
+  privateCharters: img("67b0ebf211feb91200d1194a"),
+  trolling: img("67b0ec05237ce259f4fa3a43"),
+  kids: img("67b0ec2e237ce2da57fa3a6f"),
+  family1: img("67b0b3e12aa0e9731eec72cc"),
+  family2: img("67b0b3e12ba94e3290a39940"),
+  family3: img("67b0b3e111feb93255d0dca4"),
+  seaFoxIcon: img("6977fc5cc1fa0cd3bfe12d45"),
+  gradyIcon: img("6977fe2ba87beb662222d6c0"),
+  testimonial1: img("67b0f32711feb9e510d12501"),
+  testimonial2: img("67b0f342237ce2ab10fa477a"),
+  testimonial3: img("67b0f34e11feb9a6bdd12529"),
+  avatar: img("6cc930c9-2eeb-414e-8f5f-b1c8dd599341"),
 };
 
 export const SPONSORS = [
-  { name: "Mustad Fishing", img: `${CDN}/67b670e7f94eae7802456de5.png`, href: "https://mustad-fishing.com/us" },
-  { name: "Okuma", img: `${CDN}/67b66fbc11cf9d506f234b80.png`, href: "https://okumafishingusa.com/" },
-  { name: "AFTCO", img: `${CDN}/67b66fbc300630517075f996.png`, href: "https://www.aftco.com/" },
+  { name: "Mustad Fishing", img: img("67b670e7f94eae7802456de5"), href: "https://mustad-fishing.com/us" },
+  { name: "Okuma", img: img("67b66fbc11cf9d506f234b80"), href: "https://okumafishingusa.com/" },
+  { name: "AFTCO", img: img("67b66fbc300630517075f996"), href: "https://www.aftco.com/" },
 ];
 
 export const GALLERY = [
-  PHOTOS.family1,
-  PHOTOS.family2,
-  PHOTOS.family3,
-  `${GCS.replace("r_1600", "r_1600")}/67b0b3e1237ce2134dfa0198.jpeg`,
-  `${GCS}/67b0b3e1237ce2e513fa0197.jpeg`,
-  PHOTOS.privateCharters,
-  PHOTOS.trolling,
-  PHOTOS.kids,
-];
+  "67b0b3e12aa0e9731eec72cc",
+  "67b0b3e12ba94e3290a39940",
+  "67b0b3e111feb93255d0dca4",
+  "67b0b3e111feb97c58d0dca5",
+  "67b0b3e1237ce2134dfa0198",
+  "67b0b3e1237ce21654fa019d",
+  "67b0b3e1237ce2b1dafa019c",
+  "67b0b3e1237ce2e513fa0197",
+  "67b0b3e1237ce2e8d8fa019b",
+  "67b0b3e12ba94e0fe6a39944",
+  "67b0b3e12ba94e4127a39941",
+  "67b0b3e12ba94e5a51a39942",
+  "67b0b3e12ba94e5eeea39945",
+  "67b0b3e12ba94ea3d1a39943",
+  "67b0b3e17c33f40b125b5fbe",
+  "67b0b3e17c33f475e35b5fbd",
+  "67b0b3cc2aa0e9cf60ec72b6",
+  "67b0b3cc7c33f4022f5b5fac",
+  "67b0b3cc7c33f4394e5b5fab",
+  "67b0b3cc7c33f4a6865b5faf",
+].map(img);
 
 export type Trip = {
   name: string;
