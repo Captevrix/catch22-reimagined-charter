@@ -7,10 +7,10 @@ import { OG, SITE_URL } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Catch 22 Fishing Charters | Destin, FL — Private Fishing Charters" },
+      { title: "Catch 22 Fishing Charters | Destin, FL - Private Fishing Charters" },
       { name: "description", content: "Destin's ultimate private fishing charters. Bottom fishing, trolling, and kids' catch-and-release trips out of Two Georges Marina, Shalimar, FL. Book direct and save." },
       { property: "og:title", content: "Catch 22 Fishing Charters | Destin, FL" },
-      { property: "og:description", content: "Private fishing charters in Destin, FL — big catches, even bigger memories." },
+      { property: "og:description", content: "Private fishing charters in Destin, FL - big catches, even bigger memories." },
       { property: "og:image", content: OG.home },
       { property: "og:url", content: SITE_URL + "/" },
       { name: "twitter:image", content: OG.home },
@@ -49,7 +49,7 @@ function Home() {
             Destin's Ultimate <span className="text-accent">Private Fishing Charters</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/85">
-            Big catches, even bigger memories. Spots fill fast — book your charter today.
+            Big catches, even bigger memories. Spots fill fast - book your charter today.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <BookButton>Book Direct & Save</BookButton>
@@ -70,7 +70,7 @@ function Home() {
             <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Our Fleet</p>
             <h2 className="mt-3 font-display text-4xl sm:text-5xl uppercase text-primary">Two Boats, Endless Adventure</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Catch 22 runs a fully equipped two-boat fleet — choose the Sea Fox for inshore and state-water trips, or the federally-permitted Grady-White for long-range offshore runs.
+              Catch 22 runs a fully equipped two-boat fleet - choose the Sea Fox for inshore and state-water trips, or the federally-permitted Grady-White for long-range offshore runs.
             </p>
           </div>
           <div className="mt-12 grid md:grid-cols-2 gap-6">
@@ -78,14 +78,14 @@ function Home() {
               <img src={PHOTOS.seaFoxIcon} alt="Sea Fox 248 Commander" className="h-32 w-auto mx-auto object-contain" />
               <h3 className="mt-6 font-display text-2xl uppercase text-primary">Sea Fox 248 Commander</h3>
               <span className="mt-2 inline-block rounded-sm border border-accent/60 bg-accent/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">State Waters</span>
-              <p className="mt-4 text-muted-foreground">Up to 6 anglers. Inshore and state-water trips from 4 to 12 hours — bottom fishing, trolling, and kids' trips.</p>
+              <p className="mt-4 text-muted-foreground">Up to 6 anglers. Inshore and state-water trips from 4 to 12 hours - bottom fishing, trolling, and kids' trips.</p>
               <div className="mt-6"><BookButton boat="seafox">Book Sea Fox</BookButton></div>
             </div>
             <div className="bg-card rounded-sm border border-border p-8 text-center">
               <img src={PHOTOS.gradyIcon} alt="Grady-White Offshore" className="h-32 w-auto mx-auto object-contain" />
               <h3 className="mt-6 font-display text-2xl uppercase text-primary">Grady-White Offshore</h3>
               <span className="mt-2 inline-block rounded-sm border border-accent/60 bg-accent/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">Federal Permit</span>
-              <p className="mt-4 text-muted-foreground">Up to 6 anglers. Federally permitted for long-range offshore trips from 6 to 16 hours — serious deep-sea fishing.</p>
+              <p className="mt-4 text-muted-foreground">Up to 6 anglers. Federally permitted for long-range offshore trips from 6 to 16 hours - serious deep-sea fishing.</p>
               <div className="mt-6"><BookButton boat="grady">Book Grady</BookButton></div>
             </div>
           </div>
@@ -139,7 +139,7 @@ function Home() {
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { Icon: Anchor, t: "Expert Captain & Crew", d: "Local knowledge and years of experience to put you on the fish." },
-              { Icon: Shield, t: "All-Inclusive Trips", d: "Rods, reels, bait, tackle, and licenses — just bring your excitement." },
+              { Icon: Shield, t: "All-Inclusive Trips", d: "Rods, reels, bait, tackle, and licenses - just bring your excitement." },
               { Icon: Users, t: "Families, Groups & Pros", d: "Beginner or seasoned angler, we customize every trip." },
               { Icon: Fish, t: "World's Luckiest Village", d: "Destin, FL has some of the best fishing on the Gulf Coast." },
             ].map(({ Icon, t, d }) => (
@@ -173,7 +173,7 @@ function Home() {
                 </div>
                 <h3 className="mt-3 font-display text-lg uppercase tracking-wide text-accent">{t.title}</h3>
                 <p className="mt-3 text-white/85 leading-relaxed flex-1 text-sm">{t.text}</p>
-                <p className="mt-5 pt-4 border-t border-white/10 font-display text-sm uppercase tracking-wider">— {t.name}</p>
+                <p className="mt-5 pt-4 border-t border-white/10 font-display text-sm uppercase tracking-wider"> -  {t.name}</p>
               </article>
             ))}
           </div>
@@ -187,12 +187,12 @@ function Home() {
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="bg-card rounded-sm border border-border p-8">
               <h3 className="font-display text-2xl uppercase text-primary">Private Fishing Charter</h3>
-              <p className="mt-3 text-muted-foreground">On a private charter, your group (up to 6 guests) are the only ones on the boat — plus a Captain and Mate.</p>
+              <p className="mt-3 text-muted-foreground">On a private charter, your group (up to 6 guests) are the only ones on the boat - plus a Captain and Mate.</p>
               <div className="mt-6"><Link to="/booking" className="inline-flex items-center justify-center rounded-sm bg-primary text-primary-foreground px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.15em] hover:opacity-90">Book Now</Link></div>
             </div>
             <div className="bg-card rounded-sm border border-border p-8">
               <h3 className="font-display text-2xl uppercase text-primary">Kids Fishing Trip</h3>
-              <p className="mt-3 text-muted-foreground">A 3-hour saltwater catch-and-release experience for the little ones — multiple species, big smiles.</p>
+              <p className="mt-3 text-muted-foreground">A 3-hour saltwater catch-and-release experience for the little ones - multiple species, big smiles.</p>
               <div className="mt-6"><Link to="/kids-trips" className="inline-flex items-center justify-center rounded-sm bg-accent text-accent-foreground px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.15em] hover:opacity-90">Book Now</Link></div>
             </div>
           </div>

@@ -69,7 +69,7 @@ export const TRIPS: Trip[] = [
   { name: "Private 12 Hour Trolling Charter", boat: "seafox", duration: "12 hrs", price: 2400, desc: "The ultimate Destin deep-sea adventure. Full day of bottom fishing, trolling, and chasing the biggest fish in the Gulf." },
   { name: "Kids Trip (Catch & Release)", boat: "seafox", duration: "3 hrs", price: 600, desc: "A kid-friendly day on the water with a patient crew, easy-to-catch species, and hands-on learning in a safe, relaxed setting." },
   { name: "Grady - Private 6 Hour Fishing Charter", boat: "grady", duration: "6 hrs", price: 1500, desc: "Run offshore on the federally-permitted Grady-White. Bottom fishing and trolling for the full Gulf species spread." },
-  { name: "Grady - Private 8 Hour Fishing Charter", boat: "grady", duration: "8 hrs", price: 2000, desc: "Eight hours offshore on the Grady — bottom fishing and trolling for snapper, grouper, king mackerel and mahi-mahi." },
+  { name: "Grady - Private 8 Hour Fishing Charter", boat: "grady", duration: "8 hrs", price: 2000, desc: "Eight hours offshore on the Grady - bottom fishing and trolling for snapper, grouper, king mackerel and mahi-mahi." },
   { name: "Grady - Private 10 Hour Fishing Charter", boat: "grady", duration: "10 hrs", price: 2500, desc: "Go the distance. Productive bottom fishing and trolling for hard-fighting species across a full day." },
   { name: "Grady - Private 12 Hour Fishing Charter", boat: "grady", duration: "12 hrs", price: 3000, desc: "Twelve hours of range and flexibility. Chase the bite wherever it develops across multiple deep-water spots." },
   { name: "Grady - Private 14 Hour Fishing Charter", boat: "grady", duration: "14 hrs", price: 3500, desc: "Deep offshore grounds, multiple techniques, and the time to chase the bite. A true deep-sea adventure." },
@@ -85,12 +85,12 @@ export const TESTIMONIALS = [
   {
     name: "Christopher",
     title: "We got a nice one as the 1st fish!",
-    text: "Before the charter I told John I had some bucket list fish — one being an Amberjack. We got a nice one as the 1st fish! With wind, waves and the threat of severe weather, John made calls to keep us on fish and safe at the same time. I will absolutely book Catch 22 again and encourage anyone to do the same!",
+    text: "Before the charter I told John I had some bucket list fish - one being an Amberjack. We got a nice one as the 1st fish! With wind, waves and the threat of severe weather, John made calls to keep us on fish and safe at the same time. I will absolutely book Catch 22 again and encourage anyone to do the same!",
   },
   {
     name: "Frank",
-    title: "Father's Day trip — great memories",
-    text: "It was a Father's Day trip and my son and I made great memories. On a day where the water was rough and the bite was slow, Captain John maximized the fishing when the bite happened. We caught multiple species — trout, reds and even a nice catfish. Thanks Captain John — until next time!",
+    title: "Father's Day trip - great memories",
+    text: "It was a Father's Day trip and my son and I made great memories. On a day where the water was rough and the bite was slow, Captain John maximized the fishing when the bite happened. We caught multiple species - trout, reds and even a nice catfish. Thanks Captain John - until next time!",
   },
 ];
 
@@ -99,6 +99,6 @@ export const FAQS = [
   { q: "How big is the boat?", a: "Both boats accommodate up to 6 guests. The Sea Fox 248 Commander runs state waters; the Grady-White is federally permitted for offshore runs." },
   { q: "What's included?", a: "All tackle, bait, fuel, ice, Florida fishing license for everyone on board, on-board cooler, dry box, trash can, fish cleaning and bagging, and free parking and restrooms at the dock." },
   { q: "What should I bring?", a: "Lotion sunscreen (no spray), hat, UV clothing, deck shoes or non-marking flip-flops, Dramamine, layers in cooler months, food and drinks, lots of water. Tag us @Catch22Charters!" },
-  { q: "What should I NOT bring?", a: "No spray sunscreen, no hard coolers, no large bags, no liquor (beer is OK), no pets, no illegal substances, and — old fisherman's superstition — no bananas." },
+  { q: "What should I NOT bring?", a: "No spray sunscreen, no hard coolers, no large bags, no liquor (beer is OK), no pets, no illegal substances, and - old fisherman's superstition - no bananas." },
   { q: "Deposit and cancellation?", a: "A 20% deposit confirms your trip. The remaining 80% is paid in person at the dock to the Captain. Cancellations more than 1 day prior are refunded in full. Cancellations less than 1 day prior may forfeit the deposit at the discretion of Catch 22." },
 ];

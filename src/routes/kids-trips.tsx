@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/seo";
 export const Route = createFileRoute("/kids-trips")({
   head: () => ({
     meta: [
-      { title: "Kids Fishing Trips | Catch 22 Charters — Destin, FL" },
+      { title: "Kids Fishing Trips | Catch 22 Charters - Destin, FL" },
       { name: "description", content: "A 3-hour kids' catch-and-release fishing trip in Destin, FL. Hands-on fun for young anglers with a patient, friendly crew." },
       { property: "og:title", content: "Kids Fishing Trips | Catch 22" },
       { property: "og:url", content: SITE_URL + "/kids-trips" },
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/kids-trips")({
 function KidsPage() {
   return (
     <>
-      <PageHero eyebrow="The perfect fishing trip for kids" title="🎣 Big Smiles & First Catches 🐟" subtitle="Spots fill fast — book your kids' fishing trip now." image={PHOTOS.kids} />
+      <PageHero eyebrow="The perfect fishing trip for kids" title="🎣 Big Smiles & First Catches 🐟" subtitle="Spots fill fast - book your kids' fishing trip now." image={PHOTOS.kids} />
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-5 text-muted-foreground text-lg leading-relaxed">
@@ -38,12 +38,12 @@ function KidsPage() {
           <div>
             <h2 className="font-display text-2xl uppercase text-primary">What To Bring</h2>
             <ul className="mt-4 space-y-2 text-muted-foreground">
-              <li>• Sunscreen (lotion only — no spray)</li>
+              <li>• Sunscreen (lotion only - no spray)</li>
               <li>• Hat, UV protective clothing</li>
               <li>• Deck shoes or non-marking flip-flops</li>
               <li>• Snacks, drinks, lots of water</li>
               <li>• Fitted life vest for children under 7</li>
-              <li>• Camera — tag us @Catch22Charters!</li>
+              <li>• Camera - tag us @Catch22Charters!</li>
             </ul>
           </div>
           <div>

@@ -19,7 +19,7 @@ export function SiteFooter() {
         <div className="md:col-span-2">
           <img src={SITE.logo} alt={SITE.name} className="h-16 w-auto" />
           <p className="mt-4 max-w-sm text-sm text-primary-foreground/70">
-            Private fishing charters out of Two Georges Marina in Shalimar, FL — running the world-famous waters of Destin in the "World's Luckiest Fishing Village."
+            Private fishing charters out of Two Georges Marina in Shalimar, FL - running the world-famous waters of Destin in the "World's Luckiest Fishing Village."
           </p>
           <div className="mt-5 flex gap-3">
             <a href={SITE.social.facebook} aria-label="Facebook" target="_blank" rel="noreferrer" className="h-9 w-9 rounded-sm border border-white/15 flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition">

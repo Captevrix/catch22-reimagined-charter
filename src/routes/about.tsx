@@ -21,7 +21,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About Catch 22" title="Don't Just Dream It — Fish It." subtitle="Spots fill fast — book your fishing charter now. Choose your adventure." image={PHOTOS.family1} />
+      <PageHero eyebrow="About Catch 22" title="Don't Just Dream It - Fish It." subtitle="Spots fill fast - book your fishing charter now. Choose your adventure." image={PHOTOS.family1} />
 
       <section className="py-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
@@ -76,7 +76,7 @@ function AboutPage() {
             <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Specializing in Catching</p>
             <h2 className="mt-3 font-display text-4xl uppercase text-primary">Bottom Fishing. Trolling. Jigging.</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Choose from bottom fishing for reef fish, trolling for pelagic fish, slow-pitch jigging — or depending on the trip you choose, we can do it all.
+              Choose from bottom fishing for reef fish, trolling for pelagic fish, slow-pitch jigging - or depending on the trip you choose, we can do it all.
             </p>
             <div className="mt-8"><BookButton>Book Today</BookButton></div>
           </div>

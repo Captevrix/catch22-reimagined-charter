@@ -18,14 +18,14 @@ export const BOATS: Record<BoatId, Boat> = {
   seafox: {
     id: "seafox",
     name: "Sea Fox 248 Commander",
-    tagline: "Inshore + State Waters — up to 6 anglers",
+    tagline: "Inshore + State Waters - up to 6 anglers",
     badge: "State Waters",
     embedUrl: VRIXPLAY_SEAFOX,
   },
   grady: {
     id: "grady",
     name: "Grady-White Offshore",
-    tagline: "Federally Permitted — long-range offshore",
+    tagline: "Federally Permitted - long-range offshore",
     badge: "Federal Permit",
     embedUrl: VRIXPLAY_GRADY,
   },

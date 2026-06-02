@@ -9,8 +9,8 @@ import { Search, Clock, Anchor } from "lucide-react";
 export const Route = createFileRoute("/booking")({
   head: () => ({
     meta: [
-      { title: "Book Your Fishing Charter | Catch 22 — Destin, FL" },
-      { name: "description", content: "All trips accommodate 6 guests. Choose your boat and trip length — from a quick 4-hour bite to a 16-hour offshore expedition." },
+      { title: "Book Your Fishing Charter | Catch 22 - Destin, FL" },
+      { name: "description", content: "All trips accommodate 6 guests. Choose your boat and trip length - from a quick 4-hour bite to a 16-hour offshore expedition." },
       { property: "og:title", content: "Book Your Catch 22 Charter" },
       { property: "og:url", content: SITE_URL + "/booking" },
     ],
@@ -32,7 +32,7 @@ function BookingPage() {
 
   return (
     <>
-      <PageHero eyebrow="Book Your Catch 22 Fishing Charter" title="Don't Just Dream It — Fish It." subtitle="All trips accommodate up to 6 guests. Choose your boat and trip length below." image={PHOTOS.trolling} />
+      <PageHero eyebrow="Book Your Catch 22 Fishing Charter" title="Don't Just Dream It - Fish It." subtitle="All trips accommodate up to 6 guests. Choose your boat and trip length below." image={PHOTOS.trolling} />
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
