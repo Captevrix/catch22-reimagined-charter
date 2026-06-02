@@ -41,6 +41,12 @@ export const PHOTOS = {
   aboutHero: img("67b0b3e1237ce21654fa019d"),
   galleryHero: img("67b0b3e12ba94e5eeea39945"),
   contactHero: img("67b0b3e12ba94e0fe6a39944"),
+  kidsHero: img("67b0b3e111feb97c58d0dca5"),
+  groupHero: img("67b0b3e12ba94e4127a39941"),
+  inlineA: img("67b0b3e1237ce2e513fa0197"),
+  inlineB: img("67b0b3e1237ce2b1dafa019c"),
+  inlineC: img("67b0b3e1237ce2e8d8fa019b"),
+  inlineD: img("67b0b3e12ba94e5a51a39942"),
 };
 
 export const SPONSORS = [
