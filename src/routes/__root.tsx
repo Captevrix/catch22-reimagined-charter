@@ -106,6 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0c2340" },
       { name: "geo.region", content: "US-FL" },
       { name: "geo.placename", content: "Destin" },
+      { name: "google-site-verification", content: "fpe4dxFbDqszbHroMl2TcZ1qai9MKG5LBVB32iOlW80" },
       { title: "Catch 22 Fishing Charters" },
       { property: "og:title", content: "Catch 22 Fishing Charters" },
       { name: "twitter:title", content: "Catch 22 Fishing Charters" },
