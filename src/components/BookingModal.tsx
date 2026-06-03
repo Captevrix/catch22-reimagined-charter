@@ -124,7 +124,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
           {active ? (
             <div className="bg-background">
               <div className="flex items-center justify-between px-4 py-2 border-b border-border bg-muted/40">
-                <button onClick={() => { setTrip(null); setBoat(null); }} className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition">
+                <button onClick={() => { if (trip) { setOpen(false); setTrip(null); setBoat(null); } else { setBoat(null); } }} className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition">
                   <ArrowLeft className="h-3.5 w-3.5" /> {trip ? "Back to all trips" : "Choose different boat"}
                 </button>
                 <a href={SITE.phoneHref} className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground hover:text-accent transition">
