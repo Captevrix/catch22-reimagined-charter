@@ -14,15 +14,28 @@ function standaloneUrl(embedUrl: string) {
   }
 }
 
+function withEmbed(url: string) {
+  try {
+    const u = new URL(url);
+    u.searchParams.set("embed", "true");
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 const VRIXPLAY_ORIGIN = "https://app.vrixplay.com";
 const IFRAME_LOAD_TIMEOUT_MS = 8000;
+
+type TripLike = { name: string; boat: BoatId; directUrl: string };
 
 type Ctx = {
   open: () => void;
   openWithBoat: (boat: BoatId) => void;
+  openWithTrip: (trip: TripLike) => void;
   close: () => void;
 };
-const BookingCtx = createContext<Ctx>({ open: () => {}, openWithBoat: () => {}, close: () => {} });
+const BookingCtx = createContext<Ctx>({ open: () => {}, openWithBoat: () => {}, openWithTrip: () => {}, close: () => {} });
 
 export function useBooking() {
   return useContext(BookingCtx);
@@ -31,6 +44,7 @@ export function useBooking() {
 export function BookingProvider({ children }: { children: ReactNode }) {
   const [isOpen, setOpen] = useState(false);
   const [boat, setBoat] = useState<BoatId | null>(null);
+  const [trip, setTrip] = useState<TripLike | null>(null);
   const [iframeStatus, setIframeStatus] = useState<"loading" | "ok" | "failed">("loading");
   const loadTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -46,6 +60,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
       if (e?.data && (e.data as { type?: string }).type === "booking_confirmed") {
         setOpen(false);
         setBoat(null);
+        setTrip(null);
       }
     }
     function onCSP(e: SecurityPolicyViolationEvent) {
@@ -60,7 +75,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (!boat) return;
+    if (!boat && !trip) return;
     setIframeStatus("loading");
     if (loadTimerRef.current) clearTimeout(loadTimerRef.current);
     loadTimerRef.current = setTimeout(() => {
@@ -72,25 +87,31 @@ export function BookingProvider({ children }: { children: ReactNode }) {
         loadTimerRef.current = null;
       }
     };
-  }, [boat]);
+  }, [boat, trip]);
 
   const ctx: Ctx = {
-    open: () => { setBoat(null); setOpen(true); },
-    openWithBoat: (b) => { setBoat(b); setOpen(true); },
-    close: () => { setOpen(false); setBoat(null); },
+    open: () => { setBoat(null); setTrip(null); setOpen(true); },
+    openWithBoat: (b) => { setTrip(null); setBoat(b); setOpen(true); },
+    openWithTrip: (t) => { setTrip(t); setBoat(t.boat); setOpen(true); },
+    close: () => { setOpen(false); setBoat(null); setTrip(null); },
   };
 
-  const active = boat ? BOATS[boat] : null;
+  const activeBoat = boat ? BOATS[boat] : null;
+  const active = trip
+    ? { id: trip.boat, name: trip.name, embedUrl: withEmbed(trip.directUrl) }
+    : activeBoat
+    ? { id: activeBoat.id, name: activeBoat.name, embedUrl: activeBoat.embedUrl }
+    : null;
 
   return (
     <BookingCtx.Provider value={ctx}>
       {children}
-      <Dialog open={isOpen} onOpenChange={(o) => { setOpen(o); if (!o) setBoat(null); }}>
+      <Dialog open={isOpen} onOpenChange={(o) => { setOpen(o); if (!o) { setBoat(null); setTrip(null); } }}>
         <DialogContent className="max-w-3xl p-0 overflow-hidden">
           <div className="bg-primary text-primary-foreground px-6 py-5">
             <DialogHeader>
               <DialogTitle className="font-display text-2xl tracking-wide text-primary-foreground uppercase">
-                {active ? `Book ${active.name}` : "Choose Your Boat"}
+                {active ? (trip ? active.name : `Book ${active.name}`) : "Choose Your Boat"}
               </DialogTitle>
               <DialogDescription className="text-primary-foreground/80">
                 {active
@@ -103,8 +124,8 @@ export function BookingProvider({ children }: { children: ReactNode }) {
           {active ? (
             <div className="bg-background">
               <div className="flex items-center justify-between px-4 py-2 border-b border-border bg-muted/40">
-                <button onClick={() => setBoat(null)} className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition">
-                  <ArrowLeft className="h-3.5 w-3.5" /> Choose different boat
+                <button onClick={() => { setTrip(null); setBoat(null); }} className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition">
+                  <ArrowLeft className="h-3.5 w-3.5" /> {trip ? "Back to all trips" : "Choose different boat"}
                 </button>
                 <a href={SITE.phoneHref} className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground hover:text-accent transition">
                   <Phone className="h-3.5 w-3.5" /> {SITE.phone}
@@ -127,7 +148,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
               ) : (
                 <>
                   <iframe
-                    key={active.id}
+                    key={active.embedUrl}
                     src={active.embedUrl}
                     title={`${active.name} booking`}
                     className="w-full h-[70vh] block border-0 bg-background"

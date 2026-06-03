@@ -1,26 +1,26 @@
 ## Goal
-On the `/booking` page only, make each trip card's "Book" button open that trip's specific Vrixplay direct link in a new tab — instead of opening the generic boat-picker modal.
-
-Scope is strictly limited to the trip cards on `/booking`. No other "Book Now" / generic CTAs anywhere on the site will change.
+On `/booking`, each trip card's "Book" button opens the existing booking modal — but loads that trip's specific Vrixplay URL instead of the generic boat-level embed. All other "Book Your Charter" CTAs still open the modal in boat-picker mode (unchanged).
 
 ## Changes
 
-### 1. `src/lib/site.ts` — add `directUrl` to each trip
-Extend the `Trip` type with `directUrl: string` and populate it on all 14 entries in `TRIPS` using the exact URLs you provided. Mapping is by exact trip name:
+### 1. `src/components/BookingModal.tsx`
+- Extend the context with a new method: `openWithTrip(trip: { name: string; boat: BoatId; directUrl: string })`.
+- Add internal state `tripOverride: { name; boat; embedUrl } | null`. When set, the modal renders the iframe pointed at `directUrl` (with `?embed=true` appended) and uses `trip.name` as the dialog title instead of `Book {boat.name}`.
+- The "Choose different boat" back button is hidden in trip mode (since the user picked a specific trip, not a boat) — replaced with a back arrow that closes trip mode and returns to the boat picker, OR simply omitted. Go with: show a back arrow that clears `tripOverride` and `boat`, returning to the boat picker grid (consistent UX).
+- Reset `tripOverride` on close.
+- The "Open in new tab" fallback link uses the trip's standalone URL (strip `embed` param).
+- Existing `open()` and `openWithBoat(boat)` behavior is preserved exactly.
 
-- Kids Trip (Catch & Release) → kids 3h link
-- Private 4/5/6/8/10 Hour, 8 Hour Pelagic Trolling, 12 Hour Trolling Charter → Sea Fox links
-- Grady - Private 6/8/10/12/14/16 Hour Fishing Charter → Grady links
+### 2. `src/routes/booking.tsx`
+- Re-import `useBooking`.
+- Replace the `<a href={t.directUrl} target="_blank" ...>` with a `<button onClick={() => booking.openWithTrip(t)}>` using the same classes. Trip cards stay visually identical, but click opens the modal with that trip's specific checkout.
 
-### 2. `src/routes/booking.tsx` — render the per-trip link
-Replace the existing `<button onClick={() => booking.openWithBoat(t.boat)}>Book</button>` with an `<a href={t.directUrl} target="_blank" rel="noopener noreferrer">` styled identically (same classes), so the card visually unchanged but it now goes straight to that trip's Vrixplay checkout. Drop the now-unused `useBooking` import on this page.
-
-## Out of scope (intentionally NOT touched)
-- `BookButton` component, `BookingModal`, the boat-picker flow
-- All hero CTAs, sticky mobile CTA, footer CTAs, home/about/contact/kids/group/gallery CTAs
-- `src/lib/boats.ts` boat-level embed URLs (still used by modal for generic "Book Now")
+## Out of scope (unchanged)
+- `BookButton`, hero CTAs, sticky mobile CTA, footer/home/about/contact/kids/group CTAs — all still call `open()` / `openWithBoat()`.
+- `src/lib/boats.ts` and per-boat embed URLs.
+- Trip data shape from the prior step (`directUrl` already exists on every `Trip`).
 
 ## Verification
-- TypeScript builds clean (new required `directUrl` field on every trip).
-- Visit `/booking`, click a Sea Fox card and a Grady card — each opens its specific URL in a new tab.
-- Other "Book Your Charter" buttons elsewhere still open the modal.
+- TypeScript clean.
+- `/booking`: clicking a Sea Fox card opens modal with that trip's checkout; clicking a Grady card does the same with the Grady URL; back arrow returns to boat picker; close fully resets.
+- Other pages: clicking "Book Your Charter" still shows the boat picker first.
