@@ -84,23 +84,28 @@ export type Trip = {
   duration: string;
   price: number;
   desc: string;
+  directUrl: string;
 };
 
+const VRX = "https://app.vrixplay.com/book/9bc43e8f-4e23-49c2-bd46-ec504e2f7e78";
+const VRX_SEAFOX = `${VRX}/8de956ba-5406-4e8b-bf69-61ce7012f0d8`;
+const VRX_GRADY = `${VRX}/0d019bc7-20b4-43c2-8d2b-04e57043f7b2`;
+
 export const TRIPS: Trip[] = [
-  { name: "Private 4 Hour Fishing Charter", boat: "seafox", duration: "4 hrs", price: 800, desc: "A friendly four-hour trip in Destin, perfect for first-timers or anyone short on time. Our crew helps every angler land something to be proud of." },
-  { name: "Private 5 Hour Fishing Charter", boat: "seafox", duration: "5 hrs", price: 1000, desc: "A great mix of offshore excitement and time efficiency. Bottom fishing or trolling for snapper, grouper, king mackerel and more." },
-  { name: "Private 6 Hour Fishing Charter", boat: "seafox", duration: "6 hrs", price: 1200, desc: "The sweet spot. Enough time to run offshore and target a variety of species without committing to a full day." },
-  { name: "Private 8 Hour Charter Trip", boat: "seafox", duration: "8 hrs", price: 1600, desc: "Ample time to venture into deeper water and target a diverse range of species. Stress-free, action-packed, all day on the water." },
-  { name: "Private 8 Hour Pelagic Trolling", boat: "seafox", duration: "8 hrs", price: 1600, desc: "Eight hours trolling the open water chasing king mackerel, tuna, mahi-mahi and wahoo. Big strikes, unforgettable moments." },
-  { name: "Private 10 Hour Charter Trip", boat: "seafox", duration: "10 hrs", price: 2000, desc: "More water, more time, more shots at trophy snapper, grouper, amberjack and pelagic species. Built for serious anglers." },
-  { name: "Private 12 Hour Trolling Charter", boat: "seafox", duration: "12 hrs", price: 2400, desc: "The ultimate Destin deep-sea adventure. Full day of bottom fishing, trolling, and chasing the biggest fish in the Gulf." },
-  { name: "Kids Trip (Catch & Release)", boat: "seafox", duration: "3 hrs", price: 600, desc: "A kid-friendly day on the water with a patient crew, easy-to-catch species, and hands-on learning in a safe, relaxed setting." },
-  { name: "Grady - Private 6 Hour Fishing Charter", boat: "grady", duration: "6 hrs", price: 1500, desc: "Run offshore on the federally-permitted Grady-White. Bottom fishing and trolling for the full Gulf species spread." },
-  { name: "Grady - Private 8 Hour Fishing Charter", boat: "grady", duration: "8 hrs", price: 2000, desc: "Eight hours offshore on the Grady - bottom fishing and trolling for snapper, grouper, king mackerel and mahi-mahi." },
-  { name: "Grady - Private 10 Hour Fishing Charter", boat: "grady", duration: "10 hrs", price: 2500, desc: "Go the distance. Productive bottom fishing and trolling for hard-fighting species across a full day." },
-  { name: "Grady - Private 12 Hour Fishing Charter", boat: "grady", duration: "12 hrs", price: 3000, desc: "Twelve hours of range and flexibility. Chase the bite wherever it develops across multiple deep-water spots." },
-  { name: "Grady - Private 14 Hour Fishing Charter", boat: "grady", duration: "14 hrs", price: 3500, desc: "Deep offshore grounds, multiple techniques, and the time to chase the bite. A true deep-sea adventure." },
-  { name: "Grady - Private 16 Hour Fishing Charter", boat: "grady", duration: "16 hrs", price: 4000, desc: "Our longest run. Maximum range, maximum opportunity, maximum fish stories." },
+  { name: "Private 4 Hour Fishing Charter", boat: "seafox", duration: "4 hrs", price: 800, desc: "A friendly four-hour trip in Destin, perfect for first-timers or anyone short on time. Our crew helps every angler land something to be proud of.", directUrl: `${VRX_SEAFOX}/c1365b78-91b2-412d-bde5-2e8438bc4a58` },
+  { name: "Private 5 Hour Fishing Charter", boat: "seafox", duration: "5 hrs", price: 1000, desc: "A great mix of offshore excitement and time efficiency. Bottom fishing or trolling for snapper, grouper, king mackerel and more.", directUrl: `${VRX_SEAFOX}/7663f51c-5762-499a-9623-ef70f7b20eb4` },
+  { name: "Private 6 Hour Fishing Charter", boat: "seafox", duration: "6 hrs", price: 1200, desc: "The sweet spot. Enough time to run offshore and target a variety of species without committing to a full day.", directUrl: `${VRX_SEAFOX}/d535bff5-d582-41f4-aa52-321aba26345f` },
+  { name: "Private 8 Hour Charter Trip", boat: "seafox", duration: "8 hrs", price: 1600, desc: "Ample time to venture into deeper water and target a diverse range of species. Stress-free, action-packed, all day on the water.", directUrl: `${VRX_SEAFOX}/edf9b507-b3e7-4c43-9338-0a826eca2cb8` },
+  { name: "Private 8 Hour Pelagic Trolling", boat: "seafox", duration: "8 hrs", price: 1600, desc: "Eight hours trolling the open water chasing king mackerel, tuna, mahi-mahi and wahoo. Big strikes, unforgettable moments.", directUrl: `${VRX_SEAFOX}/e0f34681-2467-411f-a1de-cb8f22d921f8` },
+  { name: "Private 10 Hour Charter Trip", boat: "seafox", duration: "10 hrs", price: 2000, desc: "More water, more time, more shots at trophy snapper, grouper, amberjack and pelagic species. Built for serious anglers.", directUrl: `${VRX_SEAFOX}/f30066ee-d414-4b7f-98f9-fcfc53b9367c` },
+  { name: "Private 12 Hour Trolling Charter", boat: "seafox", duration: "12 hrs", price: 2400, desc: "The ultimate Destin deep-sea adventure. Full day of bottom fishing, trolling, and chasing the biggest fish in the Gulf.", directUrl: `${VRX_SEAFOX}/7f1ce283-e62b-460f-adf8-ec01dcd6361f` },
+  { name: "Kids Trip (Catch & Release)", boat: "seafox", duration: "3 hrs", price: 600, desc: "A kid-friendly day on the water with a patient crew, easy-to-catch species, and hands-on learning in a safe, relaxed setting.", directUrl: `${VRX_SEAFOX}/cd02c09f-b796-4767-bd97-2a2cfbdca122` },
+  { name: "Grady - Private 6 Hour Fishing Charter", boat: "grady", duration: "6 hrs", price: 1500, desc: "Run offshore on the federally-permitted Grady-White. Bottom fishing and trolling for the full Gulf species spread.", directUrl: `${VRX_GRADY}/ed5ac822-132e-4969-9d8c-0e73761bddf0` },
+  { name: "Grady - Private 8 Hour Fishing Charter", boat: "grady", duration: "8 hrs", price: 2000, desc: "Eight hours offshore on the Grady - bottom fishing and trolling for snapper, grouper, king mackerel and mahi-mahi.", directUrl: `${VRX_GRADY}/ece6eb0a-8562-4735-9d90-40f2f1758d30` },
+  { name: "Grady - Private 10 Hour Fishing Charter", boat: "grady", duration: "10 hrs", price: 2500, desc: "Go the distance. Productive bottom fishing and trolling for hard-fighting species across a full day.", directUrl: `${VRX_GRADY}/01e89572-c9cb-4f05-9065-193657e514e1` },
+  { name: "Grady - Private 12 Hour Fishing Charter", boat: "grady", duration: "12 hrs", price: 3000, desc: "Twelve hours of range and flexibility. Chase the bite wherever it develops across multiple deep-water spots.", directUrl: `${VRX_GRADY}/bb954724-d28d-44a2-9953-9bf694453a7a` },
+  { name: "Grady - Private 14 Hour Fishing Charter", boat: "grady", duration: "14 hrs", price: 3500, desc: "Deep offshore grounds, multiple techniques, and the time to chase the bite. A true deep-sea adventure.", directUrl: `${VRX_GRADY}/05f7178c-4633-483c-93aa-4ff0d970cdb4` },
+  { name: "Grady - Private 16 Hour Fishing Charter", boat: "grady", duration: "16 hrs", price: 4000, desc: "Our longest run. Maximum range, maximum opportunity, maximum fish stories.", directUrl: `${VRX_GRADY}/9632049f-2f9d-4d77-ad06-bc419ecbe803` },
 ];
 
 export const TESTIMONIALS = [
