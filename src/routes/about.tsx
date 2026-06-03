@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/seo";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Catch 22 Charters | Expert Fishing Guides in Destin, FL" },
+      { title: "About Catch 22 Charters | Destin Fishing Guides" },
       { name: "description", content: "Meet the Catch 22 crew. Local Destin captains delivering unforgettable private fishing charters out of Two Georges Marina." },
       { property: "og:title", content: "About Catch 22 Charters" },
       { property: "og:description", content: "Expert fishing guides in Destin, FL." },
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About Catch 22" title="Don't Just Dream It - Fish It." subtitle="Spots fill fast - book your fishing charter now. Choose your adventure." image={PHOTOS.aboutHero} />
+      <PageHero eyebrow="About Catch 22" title="About Catch 22 Fishing Charters" subtitle="Meet the captains and crew running private fishing charters out of Two Georges Marina in Shalimar, FL." image={PHOTOS.aboutHero} />
 
       <section className="py-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">

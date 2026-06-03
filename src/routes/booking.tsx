@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/PageHero";
 import { useBooking } from "@/components/BookingModal";
-import { TRIPS, PHOTOS, FAQS } from "@/lib/site";
+import { TRIPS, PHOTOS, FAQS, SITE } from "@/lib/site";
 import { SITE_URL } from "@/lib/seo";
 import { Search, Clock, Anchor } from "lucide-react";
 
@@ -12,9 +12,49 @@ export const Route = createFileRoute("/booking")({
       { title: "Book Your Fishing Charter | Catch 22 - Destin, FL" },
       { name: "description", content: "All trips accommodate 6 guests. Choose your boat and trip length - from a quick 4-hour bite to a 16-hour offshore expedition." },
       { property: "og:title", content: "Book Your Catch 22 Charter" },
+      { property: "og:description", content: "Browse every Catch 22 fishing trip in Destin, FL — from a 4-hour Sea Fox run to a 16-hour offshore Grady-White expedition. All trips accommodate up to 6 guests." },
       { property: "og:url", content: SITE_URL + "/booking" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/booking" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Private Fishing Charter",
+          serviceType: "Fishing Charter",
+          provider: { "@type": "LocalBusiness", name: SITE.name, telephone: "+1-850-660-3753" },
+          areaServed: { "@type": "City", name: "Destin, FL" },
+          description: "Private fishing charters out of Two Georges Marina in Shalimar, FL — bottom fishing, trolling, and offshore trips from 3 to 16 hours.",
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Catch 22 Fishing Trips",
+            itemListElement: TRIPS.map((t) => ({
+              "@type": "Offer",
+              name: t.name,
+              price: String(t.price),
+              priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
+              url: SITE_URL + "/booking",
+              description: `${t.duration} — ${t.desc}`,
+            })),
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+    ],
   }),
   component: BookingPage,
 });
@@ -32,14 +72,14 @@ function BookingPage() {
 
   return (
     <>
-      <PageHero eyebrow="Book Your Catch 22 Fishing Charter" title="Don't Just Dream It - Fish It." subtitle="All trips accommodate up to 6 guests. Choose your boat and trip length below." image={PHOTOS.trolling} />
+      <PageHero eyebrow="Book Your Catch 22 Fishing Charter" title="Book Your Fishing Charter" subtitle="All trips accommodate up to 6 guests. Choose your boat and trip length below." image={PHOTOS.trolling} />
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3 justify-between border-b border-border pb-6">
             <div className="relative w-full sm:w-72">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search trips…" className="w-full rounded-sm border border-input bg-card pl-9 pr-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent" />
+              <input aria-label="Search trips" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search trips…" className="w-full rounded-sm border border-input bg-card pl-9 pr-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent" />
             </div>
             <div className="flex gap-2">
               {[

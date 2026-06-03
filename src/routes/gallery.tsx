@@ -7,9 +7,10 @@ import { SITE_URL } from "@/lib/seo";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Fishing Charter Photo Gallery | Catch 22 Charters in Destin, FL" },
+      { title: "Fishing Photo Gallery | Catch 22 Charters Destin" },
       { name: "description", content: "Trophy catches, big smiles, and unforgettable adventures. See the action from our Destin fishing charters." },
       { property: "og:title", content: "Photo Gallery | Catch 22 Charters" },
+      { property: "og:description", content: "Trophy catches, big smiles, and unforgettable adventures from Catch 22's private Destin fishing charters." },
       { property: "og:url", content: SITE_URL + "/gallery" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/gallery" }],

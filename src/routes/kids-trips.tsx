@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { BookButton } from "@/components/BookButton";
-import { PHOTOS } from "@/lib/site";
+import { PHOTOS, SITE } from "@/lib/site";
 import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/kids-trips")({
@@ -10,9 +10,25 @@ export const Route = createFileRoute("/kids-trips")({
       { title: "Kids Fishing Trips | Catch 22 Charters - Destin, FL" },
       { name: "description", content: "A 3-hour kids' catch-and-release fishing trip in Destin, FL. Hands-on fun for young anglers with a patient, friendly crew." },
       { property: "og:title", content: "Kids Fishing Trips | Catch 22" },
+      { property: "og:description", content: "A 3-hour kids' catch-and-release fishing trip in Destin, FL. Hands-on fun for young anglers with a patient, friendly crew." },
       { property: "og:url", content: SITE_URL + "/kids-trips" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/kids-trips" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Kids Fishing Trip (Catch & Release)",
+          serviceType: "Fishing Charter",
+          provider: { "@type": "LocalBusiness", name: SITE.name, telephone: "+1-850-660-3753" },
+          areaServed: { "@type": "City", name: "Destin, FL" },
+          description: "A 3-hour catch-and-release fishing trip in Destin, FL, built for kids and first-time anglers.",
+          offers: { "@type": "Offer", price: "600", priceCurrency: "USD", availability: "https://schema.org/InStock", url: SITE_URL + "/kids-trips" },
+        }),
+      },
+    ],
   }),
   component: KidsPage,
 });
