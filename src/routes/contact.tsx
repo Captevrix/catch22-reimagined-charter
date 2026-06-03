@@ -7,9 +7,10 @@ import { SITE_URL } from "@/lib/seo";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Catch 22 Charters | Book Your Fishing Trip in Destin, FL" },
+      { title: "Contact Catch 22 Charters | Book Your Destin Trip" },
       { name: "description", content: "Call, email, or message us to book your fishing charter or ask any questions. Two Georges Marina, Shalimar, FL." },
       { property: "og:title", content: "Contact Catch 22 Charters" },
+      { property: "og:description", content: "Call, email, or message Catch 22 to book your Destin fishing charter or ask questions. Two Georges Marina, Shalimar, FL." },
       { property: "og:url", content: SITE_URL + "/contact" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/contact" }],
