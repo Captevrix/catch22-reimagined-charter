@@ -1,0 +1,18 @@
+# Catch 22 Fishing Charters
+
+> Private fishing charters out of Two Georges Marina in Shalimar, FL — running the world-famous waters of Destin. Two boats (Sea Fox 248 Commander and a federally-permitted Grady-White), trips from 3 to 16 hours, up to 6 guests per charter.
+
+## Pages
+
+- [Home](/): Overview of Catch 22, the fleet, and featured fishing trips in Destin, FL.
+- [About](/about): Meet the captains and crew, learn about the boats and the marina.
+- [Booking](/booking): Full trip catalog with durations, prices, and FAQs for every private charter.
+- [Kids Trips](/kids-trips): 3-hour catch-and-release trip built for kids and first-time anglers.
+- [Shared Charter](/group-charter): Join other anglers on a shared trip for solo, couples, and small families.
+- [Gallery](/gallery): Photos from recent Catch 22 charters in Destin, FL.
+- [Contact](/contact): Phone, email, and marina address for booking and questions.
+
+## Optional
+
+- [Privacy Policy](/privacy-policy): How we collect, use, and protect your information.
+- [Terms of Service](/terms-of-use): Booking terms and website use.
