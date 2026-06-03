@@ -7,6 +7,8 @@ export const Route = createFileRoute("/privacy-policy")({
     meta: [
       { title: "Privacy Policy | Catch 22 Fishing Charters" },
       { name: "description", content: "How Catch 22 Fishing Charters collects, uses, and protects your information." },
+      { property: "og:title", content: "Privacy Policy | Catch 22 Fishing Charters" },
+      { property: "og:description", content: "How Catch 22 Fishing Charters collects, uses, and protects your information." },
       { property: "og:url", content: SITE_URL + "/privacy-policy" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/privacy-policy" }],
