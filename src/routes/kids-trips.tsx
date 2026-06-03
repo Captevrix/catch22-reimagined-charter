@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { BookButton } from "@/components/BookButton";
-import { PHOTOS, SITE } from "@/lib/site";
+import { PHOTOS, SITE, TRIPS } from "@/lib/site";
 import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/kids-trips")({
@@ -34,6 +34,8 @@ export const Route = createFileRoute("/kids-trips")({
 });
 
 function KidsPage() {
+  const kidsTrip = TRIPS.find((t) => t.name.toLowerCase().includes("kids"))!;
+  const tripProp = { name: kidsTrip.name, boat: kidsTrip.boat, directUrl: kidsTrip.directUrl };
   return (
     <>
       <PageHero eyebrow="The perfect trip for young anglers" title="Big Smiles & First Catches 🎣" subtitle="A 3-hour catch-and-release trip built for kids and first-timers. Spots fill fast - book today." image={PHOTOS.kidsHero} />
@@ -49,7 +51,7 @@ function KidsPage() {
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Catch-and-release fishing in calm water, with hands-on coaching every step of the way. Discounted family-friendly pricing means the whole crew gets to come along.
             </p>
-            <div className="mt-8"><BookButton>Book the Kids Trip</BookButton></div>
+            <div className="mt-8"><BookButton trip={tripProp}>Book the Kids Trip</BookButton></div>
           </div>
           <img src={PHOTOS.kids} alt="Kids fishing with Catch 22" className="aspect-[4/5] object-cover rounded-sm shadow-[var(--shadow-deep)]" />
         </div>
@@ -118,7 +120,7 @@ function KidsPage() {
           <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Ready When You Are</p>
           <h2 className="mt-3 font-display text-4xl sm:text-5xl uppercase text-primary">Make Their First Catch Count</h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">Spots fill fast in season. Book today and give your kids a day on the water they'll be talking about for years.</p>
-          <div className="mt-8 flex justify-center"><BookButton>Book the Kids Trip</BookButton></div>
+          <div className="mt-8 flex justify-center"><BookButton trip={tripProp}>Book the Kids Trip</BookButton></div>
         </div>
       </section>
     </>
