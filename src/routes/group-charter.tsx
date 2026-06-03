@@ -10,9 +10,25 @@ export const Route = createFileRoute("/group-charter")({
       { title: "Shared Fishing Charter | Catch 22 - Destin, FL" },
       { name: "description", content: "No group? No problem. Join other anglers on a shared charter in Destin, FL - affordable fishing fun at a fraction of the cost of a private trip." },
       { property: "og:title", content: "Shared Fishing Charter | Catch 22" },
+      { property: "og:description", content: "No group? No problem. Join other anglers on a shared Destin, FL charter — affordable fishing at a fraction of the cost of a private trip." },
       { property: "og:url", content: SITE_URL + "/group-charter" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/group-charter" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Shared Fishing Charter",
+          serviceType: "Fishing Charter",
+          provider: { "@type": "LocalBusiness", name: SITE.name, telephone: "+1-850-660-3753" },
+          areaServed: { "@type": "City", name: "Destin, FL" },
+          description: "Join other anglers on a shared charter out of Two Georges Marina in Shalimar, FL — solo, couples, and small families welcome.",
+          offers: { "@type": "Offer", availability: "https://schema.org/InStock", url: SITE_URL + "/group-charter" },
+        }),
+      },
+    ],
   }),
   component: GroupPage,
 });
