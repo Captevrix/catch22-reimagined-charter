@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/PageHero";
+import { useBooking } from "@/components/BookingModal";
 import { TRIPS, PHOTOS, FAQS } from "@/lib/site";
 import { SITE_URL } from "@/lib/seo";
 import { Search, Clock, Anchor } from "lucide-react";
@@ -19,6 +20,7 @@ export const Route = createFileRoute("/booking")({
 });
 
 function BookingPage() {
+  const booking = useBooking();
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<"all" | "seafox" | "grady">("all");
 
@@ -71,9 +73,9 @@ function BookingPage() {
                     </span>
                     <span className="font-display text-2xl text-primary">${t.price.toLocaleString()}</span>
                   </div>
-                  <a href={t.directUrl} target="_blank" rel="noopener noreferrer" className="mt-4 w-full inline-flex items-center justify-center rounded-sm bg-accent text-accent-foreground px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition">
+                  <button onClick={() => booking.openWithTrip(t)} className="mt-4 w-full inline-flex items-center justify-center rounded-sm bg-accent text-accent-foreground px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] hover:opacity-90 transition">
                     Book
-                  </a>
+                  </button>
                 </div>
               </article>
             ))}
