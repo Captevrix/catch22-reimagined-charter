@@ -7,6 +7,8 @@ export const Route = createFileRoute("/terms-of-use")({
     meta: [
       { title: "Terms of Service | Catch 22 Fishing Charters" },
       { name: "description", content: "Terms of service for Catch 22 Fishing Charters bookings and use of this website." },
+      { property: "og:title", content: "Terms of Service | Catch 22 Fishing Charters" },
+      { property: "og:description", content: "Terms of service for Catch 22 Fishing Charters bookings and use of this website." },
       { property: "og:url", content: SITE_URL + "/terms-of-use" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/terms-of-use" }],
