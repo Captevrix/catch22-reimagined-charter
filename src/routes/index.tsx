@@ -7,7 +7,7 @@ import { OG, SITE_URL } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Catch 22 Fishing Charters | Destin, FL - Private Fishing Charters" },
+      { title: "Catch 22 Fishing Charters | Private Destin FL Charters" },
       { name: "description", content: "Destin's ultimate private fishing charters. Bottom fishing, trolling, and kids' catch-and-release trips out of Two Georges Marina, Shalimar, FL. Book direct and save." },
       { property: "og:title", content: "Catch 22 Fishing Charters | Destin, FL" },
       { property: "og:description", content: "Private fishing charters in Destin, FL - big catches, even bigger memories." },
