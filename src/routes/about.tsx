@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
       { title: "About Catch 22 Charters | Destin Fishing Guides" },
       { name: "description", content: "Meet the Catch 22 crew. Local Destin captains delivering unforgettable private fishing charters out of Two Georges Marina." },
       { property: "og:title", content: "About Catch 22 Charters" },
-      { property: "og:description", content: "Expert fishing guides in Destin, FL." },
+      { property: "og:description", content: "Meet the Catch 22 crew - local Destin captains delivering unforgettable private fishing charters out of Two Georges Marina." },
       { property: "og:url", content: SITE_URL + "/about" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/about" }],
