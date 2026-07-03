@@ -58,9 +58,19 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 text-xs text-primary-foreground/60 flex flex-wrap items-center justify-between gap-2">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 text-xs text-primary-foreground/60 flex flex-wrap items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href={DESIGNER.url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 hover:text-accent transition"
+              aria-label={`Website designed by ${DESIGNER.name}`}
+            >
+              <span>Designed by</span>
+              <img src={DESIGNER.logo} alt={DESIGNER.name} className="h-4 w-auto" />
+            </a>
             <Link to="/privacy-policy" className="hover:text-accent">Privacy Policy</Link>
             <Link to="/terms-of-use" className="hover:text-accent">Terms of Service</Link>
           </div>
