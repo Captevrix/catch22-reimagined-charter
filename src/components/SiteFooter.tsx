@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { DESIGNER } from "@/lib/designers";
 
 const Facebook = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-2.9h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5v1.8h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12Z"/></svg>
@@ -57,9 +58,19 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 text-xs text-primary-foreground/60 flex flex-wrap items-center justify-between gap-2">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 text-xs text-primary-foreground/60 flex flex-wrap items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href={DESIGNER.url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 hover:text-accent transition"
+              aria-label={`Website designed by ${DESIGNER.name}`}
+            >
+              <span>Designed by</span>
+              <img src={DESIGNER.logo} alt={DESIGNER.name} className="h-4 w-auto" />
+            </a>
             <Link to="/privacy-policy" className="hover:text-accent">Privacy Policy</Link>
             <Link to="/terms-of-use" className="hover:text-accent">Terms of Service</Link>
           </div>
