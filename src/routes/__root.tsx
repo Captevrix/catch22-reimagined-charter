@@ -110,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Catch 22 Fishing Charters" },
       { property: "og:title", content: "Catch 22 Fishing Charters" },
       { name: "twitter:title", content: "Catch 22 Fishing Charters" },
-      { name: "description", content: "Catch 22 Fishing Charters" },
+      { name: "description", content: "Catch 22 Fishing Charters runs private Destin, FL trips from Two Georges Marina - bottom fishing, trolling, and kids' charters on a two-boat federally-permitted fleet." },
       { property: "og:description", content: "Private Destin, FL fishing charters from Two Georges Marina - bottom fishing, trolling, and kids' trips with a federally permitted crew." },
       { name: "twitter:description", content: "Private Destin, FL fishing charters from Two Georges Marina - bottom fishing, trolling, and kids' trips with a federally permitted crew." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/3893b4d1-e658-4bfb-89be-3439d62391be" },

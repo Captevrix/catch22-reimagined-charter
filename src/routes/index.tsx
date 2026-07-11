@@ -120,7 +120,7 @@ function Home() {
                   <h3 className="font-display text-2xl uppercase text-primary">{c.emoji} {c.title}</h3>
                   <p className="mt-3 text-muted-foreground flex-1">{c.desc}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold uppercase tracking-[0.18em] text-accent group-hover:gap-2 transition-all">
-                    Learn More <ChevronRight className="h-4 w-4" />
+                    View trip details <ChevronRight className="h-4 w-4" />
                   </span>
                 </div>
               </Link>
