@@ -80,11 +80,36 @@ function GalleryPage() {
             <p className="font-display text-sm uppercase tracking-[0.3em] text-accent">Photo Highlights</p>
           </div>
           <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
-            {GALLERY.map((src, i) => (
-              <div key={i} className="break-inside-avoid overflow-hidden rounded-sm bg-muted">
-                <img src={src} alt={`Catch 22 gallery photo ${i + 1}`} loading="lazy" className="w-full h-auto block hover:scale-105 transition-transform duration-700" />
-              </div>
-            ))}
+            {GALLERY.map((src, i) => {
+              const captions = [
+                "Family holding a trophy red snapper on the deck of Catch 22 in Destin, FL",
+                "Anglers with a stringer of vermilion snapper caught bottom fishing offshore Destin",
+                "Young angler smiling with a first catch on a Catch 22 kids fishing trip",
+                "Group of friends showing off amberjack caught on a Destin deep-sea charter",
+                "Captain and mate netting a mahi mahi at the boat side in the Gulf of Mexico",
+                "Couple posing with a red grouper caught offshore Destin, Florida",
+                "Angler fighting a fish on a Shimano reel aboard the Sea Fox 248 Commander",
+                "Fresh catch of the day laid out on the dock at Two Georges Marina in Shalimar",
+                "Kids holding small reef fish on a Catch 22 catch-and-release trip",
+                "Grady-White offshore boat running out of Destin East Pass at sunrise",
+                "Trophy king mackerel caught trolling out of Destin on a Catch 22 charter",
+                "Family fishing photo with multiple snapper on the deck",
+                "Angler with a large scamp grouper caught bottom fishing offshore Destin",
+                "Group celebrating a successful offshore fishing trip on Catch 22",
+                "Sunset view from the deck of a Catch 22 charter on the Gulf of Mexico",
+                "Captain gaffing a fish boatside during a Destin deep-sea trip",
+                "Anglers holding red snapper during Florida Gulf snapper season",
+                "Two guests smiling with a cooler full of Gulf reef fish",
+                "Young angler with a keeper snapper on a Catch 22 family charter",
+                "Gulf of Mexico fish cleaning at Two Georges Marina after a Catch 22 trip",
+              ];
+              const alt = captions[i] ?? `Catch 22 Destin fishing charter photo ${i + 1}`;
+              return (
+                <div key={i} className="break-inside-avoid overflow-hidden rounded-sm bg-muted">
+                  <img src={src} alt={alt} loading="lazy" className="w-full h-auto block hover:scale-105 transition-transform duration-700" />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
