@@ -15,6 +15,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as KidsTripsRouteImport } from './routes/kids-trips'
 import { Route as GroupCharterRouteImport } from './routes/group-charter'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FishingReportRouteImport } from './routes/fishing-report'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BookingRouteImport } from './routes/booking'
 import { Route as AboutRouteImport } from './routes/about'
@@ -50,6 +51,11 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FishingReportRoute = FishingReportRouteImport.update({
+  id: '/fishing-report',
+  path: '/fishing-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
+  '/fishing-report': typeof FishingReportRoute
   '/gallery': typeof GalleryRoute
   '/group-charter': typeof GroupCharterRoute
   '/kids-trips': typeof KidsTripsRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
+  '/fishing-report': typeof FishingReportRoute
   '/gallery': typeof GalleryRoute
   '/group-charter': typeof GroupCharterRoute
   '/kids-trips': typeof KidsTripsRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/booking': typeof BookingRoute
   '/contact': typeof ContactRoute
+  '/fishing-report': typeof FishingReportRoute
   '/gallery': typeof GalleryRoute
   '/group-charter': typeof GroupCharterRoute
   '/kids-trips': typeof KidsTripsRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/booking'
     | '/contact'
+    | '/fishing-report'
     | '/gallery'
     | '/group-charter'
     | '/kids-trips'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/booking'
     | '/contact'
+    | '/fishing-report'
     | '/gallery'
     | '/group-charter'
     | '/kids-trips'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/booking'
     | '/contact'
+    | '/fishing-report'
     | '/gallery'
     | '/group-charter'
     | '/kids-trips'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BookingRoute: typeof BookingRoute
   ContactRoute: typeof ContactRoute
+  FishingReportRoute: typeof FishingReportRoute
   GalleryRoute: typeof GalleryRoute
   GroupCharterRoute: typeof GroupCharterRoute
   KidsTripsRoute: typeof KidsTripsRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fishing-report': {
+      id: '/fishing-report'
+      path: '/fishing-report'
+      fullPath: '/fishing-report'
+      preLoaderRoute: typeof FishingReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BookingRoute: BookingRoute,
   ContactRoute: ContactRoute,
+  FishingReportRoute: FishingReportRoute,
   GalleryRoute: GalleryRoute,
   GroupCharterRoute: GroupCharterRoute,
   KidsTripsRoute: KidsTripsRoute,

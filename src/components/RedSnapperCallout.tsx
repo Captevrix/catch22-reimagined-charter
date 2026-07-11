@@ -220,7 +220,7 @@ function CardContents({
       <div className="mt-4 space-y-3">
         <div className="rounded-sm border border-white/10 bg-white/5 p-3">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-display uppercase tracking-[0.2em] text-white/60">
+            <span className="text-[10px] font-display uppercase tracking-[0.2em] text-white/80">
               State Waters
             </span>
             <span
@@ -234,7 +234,7 @@ function CardContents({
             </span>
           </div>
           <div className="mt-1 font-display text-base">{activeStateRange}</div>
-          <div className="text-[11px] text-white/60 mt-0.5">Sea Fox + Grady-White</div>
+          <div className="text-[11px] text-white/80 mt-0.5">Sea Fox + Grady-White</div>
         </div>
 
         <div
@@ -266,7 +266,7 @@ function CardContents({
         </div>
       </div>
 
-      <div className="mt-3 flex items-center gap-4 text-[11px] text-white/60">
+      <div className="mt-3 flex items-center gap-4 text-[11px] text-white/80">
         <span>
           <span className="text-white font-bold">2</span> fish/person
         </span>
