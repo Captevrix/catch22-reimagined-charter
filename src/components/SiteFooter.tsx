@@ -41,6 +41,7 @@ export function SiteFooter() {
             <li><Link to="/" className="hover:text-accent">Home</Link></li>
             <li><Link to="/about" className="hover:text-accent">About</Link></li>
             <li><Link to="/gallery" className="hover:text-accent">Gallery</Link></li>
+            <li><Link to="/fishing-report" className="hover:text-accent">Fishing Report</Link></li>
             <li><Link to="/booking" className="hover:text-accent">Book Private Charter</Link></li>
             <li><Link to="/kids-trips" className="hover:text-accent">Kids Trips</Link></li>
             <li><Link to="/group-charter" className="hover:text-accent">Shared Trip</Link></li>

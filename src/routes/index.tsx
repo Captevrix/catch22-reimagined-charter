@@ -15,7 +15,10 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: SITE_URL + "/" },
       { name: "twitter:image", content: OG.home },
     ],
-    links: [{ rel: "canonical", href: SITE_URL + "/" }],
+    links: [
+      { rel: "canonical", href: SITE_URL + "/" },
+      { rel: "preload", as: "image", href: PHOTOS.privateCharters, fetchpriority: "high" },
+    ],
   }),
   component: Home,
 });
