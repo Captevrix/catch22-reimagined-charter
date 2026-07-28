@@ -4,12 +4,15 @@ import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { useBooking } from "@/components/BookingModal";
 import { SITE } from "@/lib/site";
 
-const NAV = [
-  { to: "/", label: "Home" },
+const ABOUT_ITEMS = [
   { to: "/about", label: "About" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/fishing-report", label: "Fishing Report" },
   { to: "/contact", label: "Contact" },
+] as const;
+
+const PRIMARY_NAV = [
+  { to: "/", label: "Home" },
+  { to: "/fishing-report", label: "Fishing Report" },
 ] as const;
 
 const BOOK_GROUP = [
@@ -17,6 +20,41 @@ const BOOK_GROUP = [
   { to: "/kids-trips", label: "Kids Trip" },
   { to: "/group-charter", label: "Shared Trip" },
 ] as const;
+
+const SHOP = { href: "https://shop.catch22fishingcharters.com/", label: "Shop" } as const;
+
+function AboutDropdown({ mobile = false }: { mobile?: boolean }) {
+  const [open, setOpen] = useState(false);
+  if (mobile) {
+    return (
+      <div className="space-y-1">
+        {ABOUT_ITEMS.map((n) => (
+          <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="block px-3 py-2 rounded text-base text-primary-foreground/90 hover:bg-white/5">
+            {n.label}
+          </Link>
+        ))}
+      </div>
+    );
+  }
+  return (
+    <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <button type="button" onClick={() => setOpen((o) => !o)} className="flex items-center gap-1 text-sm font-medium uppercase tracking-wider text-primary-foreground/80 hover:text-accent transition-colors">
+        About <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
+          <div className="min-w-[200px] rounded-sm border border-white/10 bg-primary shadow-xl overflow-hidden">
+            {ABOUT_ITEMS.map((n) => (
+              <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm font-medium uppercase tracking-wider text-primary-foreground/80 hover:bg-white/5 hover:text-accent transition-colors">
+                {n.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -32,11 +70,20 @@ export function SiteHeader() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-7">
-            {NAV.map((n) => (
+            {PRIMARY_NAV.map((n) => (
               <Link key={n.to} to={n.to} className="text-sm font-medium uppercase tracking-wider text-primary-foreground/80 hover:text-accent transition-colors" activeProps={{ className: "text-accent" }}>
                 {n.label}
               </Link>
             ))}
+            <AboutDropdown />
+            <a
+              href={SHOP.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-medium uppercase tracking-wider text-primary-foreground/80 hover:text-accent transition-colors"
+            >
+              {SHOP.label}
+            </a>
             <div className="relative" onMouseEnter={() => setBookOpen(true)} onMouseLeave={() => setBookOpen(false)}>
               <button type="button" onClick={() => setBookOpen((o) => !o)} className="flex items-center gap-1 text-sm font-medium uppercase tracking-wider text-primary-foreground/80 hover:text-accent transition-colors">
                 Book <ChevronDown className={`h-3.5 w-3.5 transition-transform ${bookOpen ? "rotate-180" : ""}`} />
@@ -71,11 +118,24 @@ export function SiteHeader() {
 
         {open && (
           <div className="lg:hidden pb-6 space-y-1">
-            {NAV.map((n) => (
+            {PRIMARY_NAV.map((n) => (
               <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="block px-3 py-2 rounded text-base text-primary-foreground/90 hover:bg-white/5">
                 {n.label}
               </Link>
             ))}
+            <div className="border-t border-white/10 pt-2">
+              <p className="px-3 py-1 text-xs uppercase tracking-wider text-primary-foreground/50">About</p>
+              <AboutDropdown mobile />
+            </div>
+            <a
+              href={SHOP.href}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="block px-3 py-2 rounded text-base text-primary-foreground/90 hover:bg-white/5"
+            >
+              {SHOP.label}
+            </a>
             <div className="pt-2 mt-2 border-t border-white/10">
               {BOOK_GROUP.map((n) => (
                 <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="block px-3 py-2 rounded text-base text-primary-foreground/90 hover:bg-white/5">
