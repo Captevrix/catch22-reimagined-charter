@@ -46,6 +46,7 @@ export function SiteFooter() {
             <li><Link to="/kids-trips" className="hover:text-accent">Kids Trips</Link></li>
             <li><Link to="/group-charter" className="hover:text-accent">Shared Trip</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
+            <li><a href="https://shop.catch22fishingcharters.com/" target="_blank" rel="noreferrer" className="hover:text-accent">Shop</a></li>
           </ul>
         </div>
 
